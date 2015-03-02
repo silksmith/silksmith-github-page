@@ -1,0 +1,3 @@
+==Start up
+
+```./gradlew server``
