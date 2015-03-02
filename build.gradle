@@ -1,0 +1,32 @@
+buildscript {
+
+	repositories {
+		jcenter()
+		maven { url = "http://dl.bintray.com/silksmith-io/maven" }
+	}
+	dependencies {
+
+		classpath group: 'io.silksmith', name: 'silksmith', version: "0.2.0"
+	}
+}
+
+apply plugin: 'silksmith'
+apply plugin: 'silksmith-angular'
+
+repositories {
+    jcenter()
+    maven { url="http://dl.bintray.com/silksmith-io/silk"}
+}
+dependencies {
+    web "io.silksmith.libs:closure-base:1.0.0+smith.+"
+    web "io.silksmith.libs:bootstrap-sass:3.3.3+smith.+"
+    web "io.silksmith.libs:jquery:1.11.2+smith.+"
+}
+closureCompileJS{
+    entryPoint="silksmith.page"
+}
+server {
+    dir file("www")
+}
+
+task wrapper(type: Wrapper) { gradleVersion = '2.3' }
