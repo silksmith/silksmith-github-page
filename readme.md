@@ -1,3 +1,3 @@
-==Start up
+##Start up
 
-```./gradlew server``
+```./gradlew server```
