@@ -1,8 +1,7 @@
-goog.provide("silksmith.page");
+goog.module("silksmith.page");
 
-silksmith.page = function(){
+var DemoAlert = goog.require("silksmith.DemoAlert");
+//import DemoAlert from './DemoAlert';
 
-  $('<div class="alert alert-success" role="alert"></div>').appendTo("body").text("something with jquery....yey!");
-};
-
-silksmith.page();
+let demoAlert = new DemoAlert("something with jquery....yey!");
+demoAlert.show();
