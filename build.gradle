@@ -28,7 +28,12 @@ dependencies {
     web "io.silksmith.libs:closure-base:1.0.0+smith.+"
     web "io.silksmith.libs:bootstrap-sass:3.3.3+smith.+"
     web "io.silksmith.libs:jquery:1.11.2+smith.+"
+
+    testWeb "io.silksmith.libs:chai:1.10.0+smith.0"
+    testWeb "io.silksmith.libs:sinon:1.12.1+smith.0"
+    testWeb "io.silksmith.libs:sinon-chai:2.6.0+smith.0"
 }
+
 closureCompileJS{
     entryPoint="silksmith.page"
 }
