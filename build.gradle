@@ -1,12 +1,11 @@
 buildscript {
-
 	repositories {
 		jcenter()
 		maven { url = "http://dl.bintray.com/silksmith-io/maven" }
+		maven { url = "http://oss.jfrog.org/artifactory/libs-snapshot" }
 	}
 	dependencies {
-
-		classpath group: 'io.silksmith', name: 'silksmith', version: "0.2.0"
+		classpath group: 'io.silksmith', name: 'silksmith', version: "0.3.0-SNAPSHOT"
 	}
 }
 
