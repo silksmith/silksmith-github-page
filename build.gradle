@@ -18,6 +18,7 @@ buildscript {
 
 apply plugin: 'silksmith'
 apply plugin: 'silksmith-angular'
+apply plugin: 'idea'
 
 repositories {
     jcenter()
@@ -36,3 +37,21 @@ server {
 }
 
 task wrapper(type: Wrapper) { gradleVersion = '2.3' }
+
+
+if (project.plugins.hasPlugin("silksmith")) {
+    project.idea {
+        module {
+            if (!scopes.COMPILE) {
+                scopes.COMPILE = ["plus": []]
+            }
+            scopes.COMPILE.plus += [project.configurations.web]
+
+            if (!scopes.TEST) {
+                scopes.TEST = ["plus": [], "minus": []]
+            }
+            scopes.TEST.plus += [project.configurations.testWeb]
+            scopes.TEST.minus += [project.configurations.web]
+        }
+    }
+}
