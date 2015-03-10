@@ -6,6 +6,7 @@ buildscript {
 	}
 	dependencies {
 		classpath group: 'io.silksmith', name: 'silksmith', version: "0.3.0-SNAPSHOT"
+        classpath 'org.ajoberstar:gradle-git:1.1.0-milestone.2'
 	}
 
     // use a different compiler version
@@ -19,6 +20,7 @@ buildscript {
 apply plugin: 'silksmith'
 apply plugin: 'silksmith-angular'
 apply plugin: 'idea'
+apply plugin: 'org.ajoberstar.github-pages'
 
 repositories {
     jcenter()
@@ -60,6 +62,16 @@ server {
 task assembleStaticFiles(type: Copy) {
     from "www"
     into "$project.buildDir/www"
+}
+
+
+githubPages {
+    repoUri = 'https://github.com/silksmith/silksmith.github.io.git'
+    //deleteExistingFiles = true
+    targetBranch = "release-test"
+    pages {
+        from assemble.outputs.files
+    }
 }
 
 // sets up dependencies for main tasks run by Travis CI
