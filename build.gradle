@@ -60,17 +60,20 @@ server {
 
 
 task assembleStaticFiles(type: Copy) {
+    inputs.file "www"
+    outputs.dir "$project.buildDir/www"
     from "www"
     into "$project.buildDir/www"
 }
 
-
 githubPages {
-    repoUri = 'https://github.com/silksmith/silksmith.github.io.git'
-    //deleteExistingFiles = true
-    targetBranch = "release-test"
+    repoUri = 'git@github.com:silksmith/silksmith.github.io.git'
+    deleteExistingFiles = true
+    targetBranch = "master"
     pages {
-        from assemble.outputs.files
+        from assembleJS.outputs.files
+        from assembleCSS.outputs.files
+        from assembleStaticFiles.outputs.files
     }
 }
 
