@@ -1,0 +1,18 @@
+language: java
+env:
+  global:
+    # Sauce Username & Access Key
+    - secure: P6kihPUEWUVnRPbAdo21eAga7MkG5zt3YkRgu35B+3HqWHv9oYACNJpcPIcGFsORmov9yWYz9FM0lrExXPPGDMUBZNi1IPYRSj9Gx+dRUzVDnxN+PucILyPJGOMu0nbOvwbwDIS2aOv/IPG8HnaP8VxibrV+VbCd9Ze4kaCer/c=
+    - secure: dCNekYZMDHxryLlYZEKFx0BXB6HldvEjTH53E6Yja73YIu2b2F3VF/bdgXpm6VuW8Jwz81XkpuW9Q7oB27UMSZ3cTSWXiTYqkXMB/V+DddwKriaYKF8GAXKaGJ9mw28yXg9DmD4/GLXv9Mq+wI2a0Ocg+d691L8HJRxxPcgZvo8=
+addons:
+  sauce_connect: true
+notifications:
+  webhooks:
+    urls:
+    - https://webhooks.gitter.im/e/90284366b69b44d50c63
+    on_success: change
+    on_failure: always
+    on_start: false
+branches:
+  only:
+  - master
