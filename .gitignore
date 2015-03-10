@@ -133,4 +133,4 @@ local.properties
 .gems/
 
 ### Deploy key ###
-.travis/deploy_key
+deploy_key
