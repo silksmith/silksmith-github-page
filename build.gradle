@@ -56,8 +56,18 @@ server {
     dir file("www")
 }
 
-task wrapper(type: Wrapper) { gradleVersion = '2.3' }
 
+task assembleStaticFiles(type: Copy) {
+    from "www"
+    into "$project.buildDir/www"
+}
+
+// sets up dependencies for main tasks run by Travis CI
+// see: http://docs.travis-ci.com/user/languages/java/#Projects-Using-Gradle
+assemble.dependsOn assembleJS, assembleCSS, assembleStaticFiles
+check.dependsOn testJS
+
+task wrapper(type: Wrapper) { gradleVersion = '2.3' }
 
 if (project.plugins.hasPlugin("silksmith")) {
     project.idea {
