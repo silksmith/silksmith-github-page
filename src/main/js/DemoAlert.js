@@ -8,7 +8,7 @@ var DemoAlert = function(msg){
     /**
      * @type {string}
      */
-    this.msg = msg;
+    this.msg = msg === undefined ? "" : msg;
 };
 
 DemoAlert.prototype.show = function(){
