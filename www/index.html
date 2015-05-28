@@ -74,9 +74,38 @@
                         web "io.silksmith.libs:jquery:1.11.2+smith.+" //and I guess you want to have some jquery
                     }</code></pre>
             </div>
+            <p>Nothing needs to be installed ... except gradle :)</p>
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Development:</h3>
+            <div class="highlight">
+                <pre><code class="language-groovy" data-lang="groovy">
+                    # Run your local dev server
+                    gradle server
+                    # Run your closure JavaScript in Mocha
+                    gradle testJS -Pwatch
+                </code></pre>
+
+            </div>
+            Open http://localhost:10101
+        </div>
+        <div class="col-md-6">
+            <h3>Build:</h3>
+            <div class="highlight">
+                <pre><code class="language-groovy" data-lang="groovy">
+                    # checks, optimizes and minifies your JS
+                    gradle closureCompileJS
+                    # provide all the external scripts like jQuery
+                    gradle assembleWebapp
+                    # builds your CSS
+                    gradle compileSCSS
+                </code></pre>
+            </div>
+        </div>
+    </div>
 
     <footer>
 

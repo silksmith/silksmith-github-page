@@ -1,24 +1,11 @@
-buildscript {
-	repositories {
-		jcenter()
-		maven { url = "http://dl.bintray.com/silksmith-io/maven" }
-		//maven { url = "http://oss.jfrog.org/artifactory/libs-snapshot" }
-	}
-	dependencies {
-		classpath group: 'io.silksmith', name: 'silksmith', version: "0.3.2"
-        classpath 'org.ajoberstar:gradle-git:1.1.0-milestone.2'
-	}
 
-    // use a different compiler version
-    configurations.classpath.resolutionStrategy.eachDependency { details ->
-        if (details.requested.group == "com.google.javascript" && details.requested.name == "closure-compiler") {
-            details.useVersion "v20150126"
-        }
-    }
+plugins {
+  id "org.ajoberstar.github-pages" version "1.1.0"
+  id "io.silksmith.plugin" version "0.5.0"
 }
 
 apply plugin: 'silksmith'
-apply plugin: 'silksmith-angular'
+
 apply plugin: 'idea'
 apply plugin: 'org.ajoberstar.github-pages'
 
