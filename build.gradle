@@ -1,7 +1,7 @@
 
 plugins {
   id "org.ajoberstar.github-pages" version "1.1.0"
-  id "io.silksmith.plugin" version "0.5.0"
+  id "io.silksmith.plugin" version "0.6.0"
 }
 
 apply plugin: 'silksmith'
@@ -18,6 +18,7 @@ dependencies {
     web "io.silksmith.libs:bootstrap-sass:3.3.3+smith.+"
     web "io.silksmith.libs:jquery:1.11.2+smith.+"
 
+    testWeb "io.silksmith.libs:mocha:2.2.5+smith.1"
     testWeb "io.silksmith.libs:chai:1.10.0+smith.0"
     testWeb "io.silksmith.libs:sinon:1.12.1+smith.0"
     testWeb "io.silksmith.libs:sinon-chai:2.6.0+smith.0"
