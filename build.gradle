@@ -13,9 +13,9 @@ repositories {
     maven { url="http://dl.bintray.com/silksmith-io/silk"}
 }
 dependencies {
-    web "io.silksmith.libs:closure-base:1.0.0+smith.+"
-    web "io.silksmith.libs:bootstrap-sass:3.3.3+smith.+"
-    web "io.silksmith.libs:jquery:1.11.2+smith.+"
+    web "io.silksmith.libs:closure-base:v20150730"
+    web "io.silksmith.libs:bootstrap-sass:3.3.5+smith.0"
+    web "io.silksmith.libs:jquery:2.1.4+smith.0"
 
     testWeb "io.silksmith.libs:mocha:2.2.5+smith.1"
     testWeb "io.silksmith.libs:chai:1.10.0+smith.0"
